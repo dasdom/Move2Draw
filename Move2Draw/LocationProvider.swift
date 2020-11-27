@@ -56,6 +56,14 @@ extension LocationProvider: CLLocationManagerDelegate {
   }
   
   func start() {
-    locationManager.startUpdatingLocation()
+    if locationManager.accuracyAuthorization == .reducedAccuracy {
+      locationManager.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "DrawOnMap") { error in
+        if self.locationManager.accuracyAuthorization == .fullAccuracy {
+          self.locationManager.startUpdatingLocation()
+        }
+      }
+    } else {
+      locationManager.startUpdatingLocation()
+    }
   }
 }

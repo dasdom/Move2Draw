@@ -64,5 +64,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>DrawOnMap</key>
+		<string>Deine genauen Ortsdaten werden benutzt, um deine Bewegung auf eine Karte zu malen.</string>
+	</dict>
 </dict>
 </plist>
