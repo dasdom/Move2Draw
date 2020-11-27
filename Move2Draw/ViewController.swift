@@ -18,7 +18,10 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    locationProvider = LocationProvider()
+    locationProvider = LocationProvider(updateHandler: { location in
+      self.locations.append(location)
+      self.mapView.setCenter(location.coordinate, animated: true)
+    })
   }
   
   @IBAction func startUpdates(_ sender: UIButton) {
