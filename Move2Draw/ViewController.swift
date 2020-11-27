@@ -4,6 +4,7 @@
 
 import UIKit
 import MapKit
+import Combine
 
 class ViewController: UIViewController {
 
@@ -14,13 +15,17 @@ class ViewController: UIViewController {
   
   var locationProvider: LocationProvider?
   var locations: [CLLocation] = []
+  var subscription: AnyCancellable?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    locationProvider = LocationProvider(updateHandler: { location in
-      self.locations.append(location)
-      self.mapView.setCenter(location.coordinate, animated: true)
+    locationProvider = LocationProvider()
+    subscription = locationProvider?.$lastLocation.sink(receiveValue: { location in
+      if let location = location {
+        self.locations.append(location)
+        self.mapView.setCenter(location.coordinate, animated: true)
+      }
     })
   }
   

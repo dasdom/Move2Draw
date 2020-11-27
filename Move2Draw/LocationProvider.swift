@@ -4,15 +4,15 @@
 
 import UIKit
 import CoreLocation
+import Combine
 
 class LocationProvider: NSObject {
 
   let locationManager: CLLocationManager
-  let updateHandler: (CLLocation) -> Void
+  @Published var lastLocation: CLLocation?
   
-  init(updateHandler: @escaping (CLLocation) -> Void) {
+  override init() {
     
-    self.updateHandler = updateHandler
     locationManager = CLLocationManager()
     
     super.init()
@@ -52,7 +52,7 @@ extension LocationProvider: CLLocationManagerDelegate {
                        didUpdateLocations locations: [CLLocation]) {
     print("locations: \(locations)")
     if let lastLocation = locations.last {
-      updateHandler(lastLocation)
+      self.lastLocation = lastLocation
     }
   }
   
