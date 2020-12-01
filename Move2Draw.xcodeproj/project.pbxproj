@@ -14,6 +14,7 @@
 		F204F2A2257052F3007BBD3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F204F2A1257052F3007BBD3B /* Assets.xcassets */; };
 		F204F2A5257052F3007BBD3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F204F2A3257052F3007BBD3B /* LaunchScreen.storyboard */; };
 		F204F2AE257057FB007BBD3B /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F204F2AD257057FB007BBD3B /* LocationProvider.swift */; };
+		F2B306362576E10B0001F094 /* MKMapSnapshotterSnapshotExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B306352576E10B0001F094 /* MKMapSnapshotterSnapshotExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F204F2A4257052F3007BBD3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F204F2A6257052F3007BBD3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F204F2AD257057FB007BBD3B /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		F2B306352576E10B0001F094 /* MKMapSnapshotterSnapshotExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapSnapshotterSnapshotExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				F204F298257052EC007BBD3B /* AppDelegate.swift */,
 				F204F29A257052EC007BBD3B /* SceneDelegate.swift */,
 				F204F29C257052EC007BBD3B /* ViewController.swift */,
+				F2B306352576E10B0001F094 /* MKMapSnapshotterSnapshotExtension.swift */,
 				F204F2AD257057FB007BBD3B /* LocationProvider.swift */,
 				F204F29E257052EC007BBD3B /* Main.storyboard */,
 				F204F2A1257052F3007BBD3B /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2B306362576E10B0001F094 /* MKMapSnapshotterSnapshotExtension.swift in Sources */,
 				F204F29D257052EC007BBD3B /* ViewController.swift in Sources */,
 				F204F2AE257057FB007BBD3B /* LocationProvider.swift in Sources */,
 				F204F299257052EC007BBD3B /* AppDelegate.swift in Sources */,
@@ -294,6 +298,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6PD97MRX4;
 				INFOPLIST_FILE = Move2Draw/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +318,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6PD97MRX4;
 				INFOPLIST_FILE = Move2Draw/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

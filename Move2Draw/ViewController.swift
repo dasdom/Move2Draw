@@ -5,6 +5,7 @@
 import UIKit
 import MapKit
 import Combine
+import StoreKit
 
 class ViewController: UIViewController {
 
@@ -47,6 +48,30 @@ class ViewController: UIViewController {
   
   @IBAction func startUpdates(_ sender: UIButton) {
     locationProvider?.start()
+  }
+  
+  @IBAction func share(_ sender: UIButton) {
+    let options = MKMapSnapshotter.Options()
+    options.region = mapView.region
+    
+    let snapshotter = MKMapSnapshotter(options: options)
+    snapshotter.start { snapshot, error in
+      guard let snapshot = snapshot else {
+        return
+      }
+      
+      if let image = snapshot.imageByAddingPath(with: self.locations) {
+        
+        let activity = UIActivityViewController(activityItems: [image, "#Walk2Draw"],
+                                                applicationActivities: nil)
+        activity.completionWithItemsHandler = { _, _, _, _ in
+          if let windowScene = UIApplication.shared.windows.last?.windowScene {
+            SKStoreReviewController.requestReview(in: windowScene)
+          }
+        }
+        self.present(activity, animated: true)
+      }
+    }
   }
 }
 
